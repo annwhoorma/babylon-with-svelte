@@ -1,0 +1,74 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add @tsconfig
+
+PATH: 
+  /home/whoorma/.vscode-server/bin/c3f126316369cd610563c75b1b1725e0679adfb3/bin:/home/whoorma/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/cygnus/cygwin-b20/H-i586-cygwin32/bin:/mnt/c/Users/Anna/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Anna/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Anna/AppData/Roaming/npm:/snap/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  16.4.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@tsconfig: Request "https://registry.yarnpkg.com/@tsconfig" returned a 405
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66997:18)
+      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140662:22)
+      at Request.emit (node:events:394:28)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141634:10)
+      at Request.emit (node:events:394:28)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141556:12)
+      at Object.onceWrapper (node:events:513:28)
+      at IncomingMessage.emit (node:events:406:35)
+      at endReadableNT (node:internal/streams/readable:1329:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "svelte-app",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+      "build": "rollup -c",
+      "dev": "rollup -c -w",
+      "start": "sirv public --no-clear",
+      "check": "svelte-check --tsconfig ./tsconfig.json"
+    },
+    "devDependencies": {
+      "@rollup/plugin-commonjs": "^17.0.0",
+      "@rollup/plugin-eslint": "^8.0.1",
+      "@rollup/plugin-node-resolve": "^13.0.2",
+      "@rollup/plugin-typescript": "^8.0.0",
+      "@tsconfig/svelte": "^2.0.0",
+      "eslint-config-airbnb-base": "^14.2.1",
+      "eslint-plugin-import": "^2.23.4",
+      "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
+      "eslint-plugin-svelte3": "^3.2.0",
+      "rollup": "^2.3.4",
+      "rollup-plugin-livereload": "^2.0.0",
+      "rollup-plugin-scss": "^3.0.0",
+      "rollup-plugin-svelte": "^7.0.0",
+      "rollup-plugin-terser": "^7.0.0",
+      "svelte": "^3.38.3",
+      "svelte-check": "^2.0.0",
+      "svelte-preprocess": "^4.0.0",
+      "tslib": "^2.0.0",
+      "typescript": "^4.0.0"
+    },
+    "dependencies": {
+      "@babylonjs/core": "^4.2.0",
+      "@babylonjs/materials": "^4.2.0",
+      "rollup-plugin-includepaths": "^0.2.4",
+      "sass": "^1.35.2",
+      "sirv-cli": "^1.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
