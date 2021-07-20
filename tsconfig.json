@@ -1,7 +1,17 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
-  "types": ["svelte", "@types/snowpack-env", "babylonjs",],
+  "types": [
+    "svelte",
+    "@types/snowpack-env",
+    "babylonjs"
+  ],
 
-  "include": ["src/**/*"],
-  "exclude": ["node_modules/*", "__sapper__/*", "public/*"]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules/*",
+    "__sapper__/*",
+    "public/*"
+  ]
 }
