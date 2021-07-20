@@ -10,30 +10,38 @@
 	} from '@babylonjs/core';
 
 	import { GridMaterial } from '@babylonjs/materials/grid';
+	import { onMount } from 'svelte';
 
-  let sceneHolder;
+  export let sceneHolder: HTMLCanvasElement;
 
-  const engine = new Engine(sceneHolder, false);
-	const scene = new Scene(engine);
+	onMount(() => {
+		initScene();
+	});
 
-	const camera = new ArcRotateCamera('camera', -Math.PI / 2, Math.PI / 2.5, 3, new Vector3(0, 0, 0), scene);
-	camera.attachControl(sceneHolder, true);
+	const initScene = () => {
+		const engine = new Engine(sceneHolder, false);
+		const scene = new Scene(engine);
 
-	const light = new HemisphericLight('light', new Vector3(0, 1, 0), scene);
+		const camera = new ArcRotateCamera('camera', -Math.PI / 2, Math.PI / 2.5, 3, new Vector3(0, 0, 0), scene);
+		camera.attachControl(sceneHolder, true);
 
-	var groundMaterial = new GridMaterial("groundMaterial", scene);
-	groundMaterial.majorUnitFrequency = 5;
-	groundMaterial.minorUnitVisibility = 0.45;
-	groundMaterial.gridRatio = 2;
-	groundMaterial.backFaceCulling = false;
-	groundMaterial.mainColor = new Color3(1, 1, 1);
-	groundMaterial.lineColor = new Color3(1.0, 1.0, 1.0);
-	groundMaterial.opacity = 0.98;
+		const light = new HemisphericLight('light', new Vector3(0, 1, 0), scene);
 
-	var ground = Mesh.CreateGround('ground', 10, 10, 100, scene);
-	ground.material = groundMaterial;
+		const groundMaterial = new GridMaterial("groundMaterial", scene);
+		groundMaterial.majorUnitFrequency = 5;
+		groundMaterial.minorUnitVisibility = 0.45;
+		groundMaterial.gridRatio = 2;
+		groundMaterial.backFaceCulling = false;
+		groundMaterial.mainColor = new Color3(1, 1, 1);
+		groundMaterial.lineColor = new Color3(1.0, 1.0, 1.0);
+		groundMaterial.opacity = 0.98;
+
+		const ground = Mesh.CreateGround('ground', 10, 10, 100, scene);
+		ground.material = groundMaterial;
+		console.log(ground);
+
+		engine.runRenderLoop(function () {
+			camera.alpha += 0.003;
+		});
+	}
 </script>
-
-<div class='container'>
-  <slot>{sceneHolder}</slot>
-</div>

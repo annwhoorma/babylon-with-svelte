@@ -1,19 +1,17 @@
 <script lang="ts">
 	import Scene from './scene/Scene.svelte';
+  let sceneHolder: HTMLCanvasElement;
 </script>
 
-<div class="scene">
-	<Scene let:sceneHolder={sceneHolder}>
-		<canvas class:sceneHolder>
-		</canvas>
-	</Scene>
-</div>
+<canvas class="sceneHolder" bind:this={sceneHolder}>
+  {#if (sceneHolder)}
+    <Scene sceneHolder={sceneHolder}>
+    </Scene>
+  {/if}
+</canvas>
 
 <style>
 	.sceneHolder {
-    z-index: 1;
-    display: block;
-    float: right;
     width: 100%;
     height: 100%;
   }

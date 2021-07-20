@@ -1,6 +1,6 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
-  "types": ["svelte", "@types/snowpack-env"],
+  "types": ["svelte", "@types/snowpack-env", "babylonjs",],
 
   "include": ["src/**/*"],
   "exclude": ["node_modules/*", "__sapper__/*", "public/*"]
